@@ -1,0 +1,16 @@
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\PhoneSite.deps.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\PhoneSite.runtimeconfig.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\PhoneSite.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\PhoneSite.dll
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\PhoneSite.pdb
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.RazorAssemblyInfo.cache
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.RazorAssemblyInfo.cs
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.AssemblyInfo.cs
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.dll
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.pdb
+C:\Users\Admin\source\repos\PhoneSite\phonesite\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Admin\source\repos\PhoneSite\phonesite\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Admin\source\repos\PhoneSite\phonesite\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
