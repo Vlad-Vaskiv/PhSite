@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\repos\\PhoneSite\\phonesite\\PhoneSite.csproj": {}
+    "C:\\Users\\Admin\\source\\repos\\PhoneSite\\PhoneSite\\PhoneSite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\PhoneSite\\phonesite\\PhoneSite.csproj": {
+    "C:\\Users\\Admin\\source\\repos\\PhoneSite\\PhoneSite\\PhoneSite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\PhoneSite\\phonesite\\PhoneSite.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\PhoneSite\\PhoneSite\\PhoneSite.csproj",
         "projectName": "PhoneSite",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\PhoneSite\\phonesite\\PhoneSite.csproj",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\PhoneSite\\PhoneSite\\PhoneSite.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\PhoneSite\\phonesite\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\PhoneSite\\PhoneSite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
