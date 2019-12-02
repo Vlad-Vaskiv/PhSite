@@ -1,0 +1,24 @@
+[
+    {
+        "NameFirm": "Apple",
+        "ImageFirm": "https://i.imgur.com/1oP1u7C.jpg",
+        "ModelPhones": [
+            {
+                "Model": "6s",
+                "Display": "200",
+                "Camera": "15",
+                "Processor": "i9",
+                "Storage": "en",
+                "Battery": "pa",
+                "Others": "Something",
+                "Price": "20000",
+                "ImagePhones": [
+                    {
+                        "ImageModelAddress": "https://i.imgur.com/1oP1u7C.jpg",
+                        "isMain": true
+                    }
+                ]
+            }
+        ]
+    }
+]

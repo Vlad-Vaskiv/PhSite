@@ -14,7 +14,10 @@ namespace PhoneSite.Data
 
         }
 
-        public DbSet<Value> MyProperty { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<FirmPhone> FirmPhones { get; set; }
+        public DbSet<ModelPhone> ModelPhones { get; set; }
+        public DbSet<ImagePhone> ImagePhones { get; set; }
+
     }
 }

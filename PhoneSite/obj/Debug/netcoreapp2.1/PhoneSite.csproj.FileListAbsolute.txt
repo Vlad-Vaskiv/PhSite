@@ -11,6 +11,8 @@ C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSit
 C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.RazorTargetAssemblyInfo.cache
 C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.dll
 C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.pdb
-C:\Users\Admin\source\repos\PhoneSite\phonesite\bin\Debug\netcoreapp2.1\appsettings.Development.json
-C:\Users\Admin\source\repos\PhoneSite\phonesite\bin\Debug\netcoreapp2.1\appsettings.json
-C:\Users\Admin\source\repos\PhoneSite\phonesite\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\Data\firmSeedData.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.csproj.CoreCompileInputs.cache
