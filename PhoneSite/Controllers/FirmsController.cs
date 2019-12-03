@@ -9,11 +9,11 @@ using PhoneSite.Models;
 namespace PhoneSite.Controllers
 {
     [Route("api/[controller]")]
-    public class FirmController : ControllerBase
+    public class FirmsController : ControllerBase
     {
     public readonly IFirmRepository _repo;
     public readonly IMapper _mapper;
-    public FirmController(IFirmRepository repo, IMapper mapper)
+    public FirmsController(IFirmRepository repo, IMapper mapper)
     {
       _mapper = mapper;
       _repo = repo;

@@ -15,9 +15,13 @@ import { ErrorInterceptor, ErrorInterceptorProvider } from './_services/error.in
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './_services/alertify.service';
-import { PhoneListComponent } from './phone-list/phone-list.component';
+import { FirmListComponent } from './firms/firm-list/firm-list.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
+import { FirmServiceService } from './_services/firm-service.service';
+import { FirmContComponent } from './firms/firm-cont/firm-cont.component';
+import { FirmDetailComponent } from './firms/firm-detail/firm-detail.component';
+
 
 @NgModule({
    declarations: [
@@ -25,7 +29,9 @@ import { appRoutes } from './routes';
       NavComponent,
       HomeComponent,
       RegisterComponent,
-      PhoneListComponent
+      FirmListComponent,
+      FirmContComponent,
+      FirmDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -37,7 +43,8 @@ import { appRoutes } from './routes';
    providers: [
       AccountService,
       ErrorInterceptorProvider,
-      AlertifyService
+      AlertifyService,
+      FirmServiceService
    ],
    bootstrap: [
       AppComponent

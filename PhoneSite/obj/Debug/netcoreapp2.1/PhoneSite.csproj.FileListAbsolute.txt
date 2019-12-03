@@ -15,4 +15,3 @@ C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\appsetti
 C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\appsettings.json
 C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\Data\firmSeedData.json
 C:\Users\Admin\source\repos\PhoneSite\PhoneSite\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
-C:\Users\Admin\source\repos\PhoneSite\PhoneSite\obj\Debug\netcoreapp2.1\PhoneSite.csproj.CoreCompileInputs.cache

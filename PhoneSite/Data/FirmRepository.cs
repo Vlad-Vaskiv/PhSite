@@ -8,6 +8,11 @@ namespace PhoneSite.Data
     public class FirmRepository : IFirmRepository
     {
         public readonly DataContext _context;
+
+        public FirmRepository(DataContext context)
+        {
+            _context = context;
+        }
        public async Task<FirmPhone> GetFirm(int id)
        {
            var firm = await _context.FirmPhones.Include(p => p.ModelPhones).FirstOrDefaultAsync(u => u.Id == id);
