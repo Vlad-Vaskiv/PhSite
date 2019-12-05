@@ -1,0 +1,128 @@
+
+   .font-robo {
+    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+  button {
+    outline: none;
+    background: none;
+    border: none;
+  }
+
+  .page-wrapper {
+    width: 900px;
+    float: right;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .bg-blue {
+    background: black;
+  }
+
+  .p-t-100 {
+    padding-top: 100px;
+  }
+  
+  .p-t-20 {
+    padding-top: 20px;
+  }
+  
+  .p-b-100 {
+    padding-bottom: 100px;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+  }
+  
+  .wrapper--w680 {
+    max-width: 680px;
+  }
+
+  .btn {
+    line-height: 40px;
+    display: inline-block;
+    padding: 0 25px;
+    cursor: pointer;
+    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+    color: #fff;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .btnmar{
+      margin-left: 100px;
+  }
+  
+  .btn--radius {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  
+  .btn--green {
+    background: #57b846;
+  }
+  
+  .btn--green:hover {
+    background: #4dae3c;
+  }
+
+  input {
+    outline: none;
+    margin: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  
+  .input--style-1 {
+    padding: 9px 0;
+    color: #666;
+  }
+
+
+  .title {
+    margin-bottom: 37px;
+  }
+
+  .card {
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #fff;
+  }
+ 
+  .card-1 {
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-1 .card-body {
+    padding: 0 90px;
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  

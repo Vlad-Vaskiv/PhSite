@@ -12,11 +12,11 @@ namespace PhoneSite.Controllers
    // [Authorize]
     [Route("api/[controller]")]
    // [ApiController]
-    public class PhoneController : ControllerBase
+    public class PhonesController : ControllerBase
     {
     public readonly IPhoneRepository _repo;
     public readonly IMapper _mapper;
-    public PhoneController(IPhoneRepository repo, IMapper mapper)
+    public PhonesController(IPhoneRepository repo, IMapper mapper)
     {
       _mapper = mapper;
       _repo = repo;

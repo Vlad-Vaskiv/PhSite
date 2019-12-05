@@ -1,0 +1,38 @@
+<!-- 
+<h3>{{phone.model}}</h3>
+<h3>{{phone.price}}</h3>
+<a class="card-link text-warning" [routerLink]="['/phones/', phone.id]">ReadMore</a> -->
+
+<div class="wrapper">
+  <div class="product-img">
+    <img src="{{phone.imageUrl}}" height="320" width="320">
+  </div>
+  <div class="product-info">
+    <div class="product-text">
+      <h3>Модель: {{phone.model}}</h3>
+      <h3>Ціна: {{phone.price}}</h3>
+     
+    </div>
+    <div class="product-price-btn">
+      <button class="card-link text-warning" [routerLink]="['/phones/', phone.id]">Детальніше</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="wrapper">
+  <div class="product-img">
+    <img src="{{firm.imageFirm}}" height="320" width="320">
+  </div>
+  <div class="product-info">
+    <div class="product-text">
+      <h3>{{firm.nameFirm}}</h3>
+      <h3>{{firm.Model}}</h3>
+       <a class="card-link text-warning" [routerLink]="['/firms/', firm.id]">ReadMore</a>  -->
+  <!--  </div>
+    <div class="product-price-btn">
+      <button type="button" [routerLink]="['/firms/', firm.id]">Детальніше</button>
+    </div>
+  </div>
+</div> -->
+

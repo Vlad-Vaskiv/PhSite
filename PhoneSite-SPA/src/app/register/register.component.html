@@ -1,18 +1,24 @@
-<form #registerForm="ngForm" (ngSubmit)="register()">
-  <h2 class="text-center text-primary">Sign Up</h2>
-  <hr>
-
-  <div class="form-group">
-    <input type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Username">
+<div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+  <div class="wrapper wrapper--w680">
+      <div class="card card-1">
+          <div class="card-heading"></div>
+          <div class="card-body">
+              <h2 class="title">Sign Up</h2>
+              <form #registerForm="ngForm" (ngSubmit)="register()">
+                  <div class="input-group">
+                    <input type="text" class="input--style-1" required name="username" [(ngModel)]="model.username" placeholder="Username">
+                  </div>
+                
+                  <div class="input-group">
+                    <input type="password" class="input--style-1" required name="password" [(ngModel)]="model.password" placeholder="Password">
+                  </div>
+                
+                  <div class="p-t-20">
+                    <button class="btn btn--radius btn--green" type="submit">Register</button>
+                    <button class="btn btn--radius btn--green btnmar" type="button" (click)="cancel()">Cancel</button>
+                  </div>
+              </form>
+          </div>
+      </div>
   </div>
-
-  <div class="form-group">
-    <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Password">
-  </div>
-
-  <div class="form-group text-center">
-    <button class="btn btn-success" type="submit">Register</button>
-    <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
-  </div>
-  
-</form>
+</div>

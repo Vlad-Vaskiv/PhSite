@@ -3,7 +3,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using PhoneSite.Data;
@@ -12,64 +16,84 @@ using PhoneSite.Models;
 
 namespace PhoneSite.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AccountController : ControllerBase
+  [AllowAnonymous]
+  [Route("api/[controller]")]
+  [ApiController]
+  public class AccountController : ControllerBase
+  {
+    private readonly IAuthRepository _repo;
+    private readonly IConfiguration _config;
+    private readonly UserManager<User> _userManager;
+    private readonly SignInManager<User> _signInManager;
+    private readonly IMapper _mapper;
+
+    public AccountController(IConfiguration config, UserManager<User> userManager,
+      SignInManager<User> signInManager, IMapper mapper)
     {
-        private readonly IAuthRepository _repo;
-        private readonly IConfiguration _config;
-        public AccountController(IAuthRepository repo, IConfiguration config)
-        {
-            _config = config;
-            _repo = repo;
-        }
+      _mapper = mapper;
+      _config = config;
+      _userManager = userManager;
+      _signInManager = signInManager;
+    }
+    [HttpPost("register")]
+    public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
+    {
+      // валідація 
+            var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
-        {
-            //валідація 
-            userForRegisterDto.UserName = userForRegisterDto.UserName.ToLower();
-            if(await _repo.UserExists(userForRegisterDto.UserName))
-            return BadRequest("Користувач вже існує");
+            var result = await _userManager.CreateAsync(userToCreate, userForRegisterDto.Password);
 
-            var userToCreate = new User
+            var userToReturn = _mapper.Map<UserForDetailedDto>(userToCreate);
+
+            if (result.Succeeded)
             {
-                UserName = userForRegisterDto.UserName
-            };
+                return CreatedAtRoute("GetUser", 
+                    new { controller = "Users", id = userToCreate.Id }, userToReturn);
+            }
 
-            var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
-
-            return StatusCode(201);
-        }
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
+            return BadRequest(result.Errors);
+    }
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
     {
-      var userFromRepo = await _repo.Login(userForLoginDto.UserName.ToLower(), userForLoginDto.Password);
-      if (userFromRepo == null)
+      var user = await _userManager.FindByNameAsync(userForLoginDto.UserName);
+      var result = await _signInManager.CheckPasswordSignInAsync(user, userForLoginDto.Password, false);
+      if (result.Succeeded)
+      {
+        var appUser = await _userManager.Users.FirstOrDefaultAsync(u => u.NormalizedUserName == userForLoginDto.UserName.ToUpper());
+        var userToReturn = _mapper.Map<UserForListDto>(appUser);
+        return Ok(new
+        {
+          token = GenerateJWtToken(appUser),
+          user = userToReturn // відправляю токен в response 
+        });
+      }
         return Unauthorized();
-      //Створюємо токен який потім відправимо користувачу, він буде мати 2-бітну інфу про користувача(username и password) 
-      //Сервер може заглянути всередину токена і отримати дані про користувача, тому що токен валідований сервером без використання бд
+      //Створюю токен, який потім відправляєм юзеру, він буде мати 2-бітну інфу про юзера(username i password)
+      //Так як токен валідований сервером без використання бд, сервер може заглянути всередину токена і отримати дані про юзера
+
+    }
+    private string GenerateJWtToken(User user)
+    {
       var claims = new[]
       {
-        new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),         // NameIdentifier = id
-        new Claim(ClaimTypes.Name,userFromRepo.UserName)
+        new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),// NameIdentifier = id
+        new Claim(ClaimTypes.Name,user.UserName)
       };
       var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
       var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-      //створюємо токен
+      //створюю токен
       var tokenDescriptor = new SecurityTokenDescriptor
       {
         Subject = new ClaimsIdentity(claims),
         Expires = DateTime.Now.AddDays(1),
         SigningCredentials = creds
       };
-      //прописуєм handler, який дозволяє створювати token оснований на tokenDescriptor
+      //handler - дозволяє створювати token основаним на tokenDescriptor
       var tokenHandler = new JwtSecurityTokenHandler();
+
       var token = tokenHandler.CreateToken(tokenDescriptor);
-      return Ok(new {
-        token = tokenHandler.WriteToken(token) // отправляем токен в response 
-      });
+
+      return tokenHandler.WriteToken(token);
     }
-    }
-}
+  }}

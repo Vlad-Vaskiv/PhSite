@@ -1,3 +1,8 @@
-<h1>{{firm.nameFirm}}</h1>
-<img class="card-img" src="{{firm.imageFirm}}"/>
-
+<div class="container">
+    <div class="row">
+      <div *ngFor="let phone of phones" class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <app-phone-cont [phone]="phone"></app-phone-cont>
+  
+      </div>
+    </div>
+  </div>

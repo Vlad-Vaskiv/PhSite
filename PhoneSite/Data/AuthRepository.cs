@@ -19,9 +19,6 @@ namespace PhoneSite.Data
             if(user == null)
             return null;
 
-            if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))  
-            return null; 
-
             return user;       
         }
 
@@ -43,9 +40,6 @@ namespace PhoneSite.Data
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password,out passwordHash, out passwordSalt);
-
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
 
             await _context.AddAsync(user);
             await _context.SaveChangesAsync();

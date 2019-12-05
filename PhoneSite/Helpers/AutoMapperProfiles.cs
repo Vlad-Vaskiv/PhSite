@@ -18,9 +18,11 @@ namespace PhoneSite.Helpers
               opt.MapFrom(src => src.ImagePhones.FirstOrDefault(p => p.isMain).ImageModelAddress);
             });
 
-       // CreateMap<ImagePhone, ImageForDetailedDto>();
+        CreateMap<ImagePhone, ImageForDetailedDto>();
         CreateMap<FirmPhone, FirmForListDto>();
         CreateMap<FirmPhone, ModelForDetailedDto>();
+        CreateMap<User,UserForListDto>();   
+        CreateMap<UserForRegisterDto,User>();
       }
     }
 }

@@ -21,6 +21,10 @@ import { appRoutes } from './routes';
 import { FirmServiceService } from './_services/firm-service.service';
 import { FirmContComponent } from './firms/firm-cont/firm-cont.component';
 import { FirmDetailComponent } from './firms/firm-detail/firm-detail.component';
+import { PhoneDetailComponent } from './phones/phone-detail/phone-detail.component';
+import { PhoneListComponent } from './phones/phone-list/phone-list.component';
+import { PhoneContComponent } from './phones/phone-cont/phone-cont.component';
+import { PhoneService } from './_services/phone.service';
 
 
 @NgModule({
@@ -31,7 +35,10 @@ import { FirmDetailComponent } from './firms/firm-detail/firm-detail.component';
       RegisterComponent,
       FirmListComponent,
       FirmContComponent,
-      FirmDetailComponent
+      FirmDetailComponent,
+      PhoneContComponent,
+      PhoneDetailComponent,
+      PhoneListComponent
    ],
    imports: [
       BrowserModule,
@@ -44,7 +51,8 @@ import { FirmDetailComponent } from './firms/firm-detail/firm-detail.component';
       AccountService,
       ErrorInterceptorProvider,
       AlertifyService,
-      FirmServiceService
+      FirmServiceService,
+      PhoneService
    ],
    bootstrap: [
       AppComponent

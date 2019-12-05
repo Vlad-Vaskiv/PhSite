@@ -1,10 +1,10 @@
 [
     {
-        "NameFirm": "Apple",
+        "NameFirm": "Samsung",
         "ImageFirm": "https://i.imgur.com/1oP1u7C.jpg",
         "ModelPhones": [
             {
-                "Model": "6s",
+                "Model": "s6",
                 "Display": "200",
                 "Camera": "15",
                 "Processor": "i9",
@@ -14,7 +14,7 @@
                 "Price": "20000",
                 "ImagePhones": [
                     {
-                        "ImageModelAddress": "https://i.imgur.com/1oP1u7C.jpg",
+                        "ImageModelAddress": "https://i.imgur.com/lvG926G.png",
                         "isMain": true
                     }
                 ]

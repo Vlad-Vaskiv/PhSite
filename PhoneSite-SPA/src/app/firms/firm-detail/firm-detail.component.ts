@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { FirmServiceService } from 'src/app/_services/firm-service.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { Firm } from 'src/app/_models/firm';
+import { PhoneService } from 'src/app/_services/phone.service';
+import { Phone } from 'src/app/_models/phone';
 
 @Component({
   selector: 'app-firm-detail',
@@ -11,11 +13,13 @@ import { Firm } from 'src/app/_models/firm';
 })
 export class FirmDetailComponent implements OnInit {
   firm: Firm;
+  phones: Phone[];
 
-  constructor(private firmService: FirmServiceService, private route: ActivatedRoute, private alertify: AlertifyService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private firmService: FirmServiceService, private phoneService: PhoneService, private route: ActivatedRoute, private alertify: AlertifyService) { }
 
   ngOnInit() {
-    this.loadFirm();
+    this.loadPhones();
   }
 
   loadFirm() {
@@ -25,5 +29,13 @@ export class FirmDetailComponent implements OnInit {
         }, error => {
           this.alertify.error(error);
         }); // + конвертит в number из string
+  }
+
+  loadPhones() {
+    this.phoneService.getPhones().subscribe((phones: Phone[]) => {
+      this.phones = phones;
+    }, error => {
+      console.log(error);
+    });
   }
 }

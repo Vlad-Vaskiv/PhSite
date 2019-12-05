@@ -18,6 +18,11 @@ namespace PhoneSite.Data
     {
         _context.Remove(entity);
     }
+
+     public PhoneRepository(DataContext context)
+        {
+            _context = context;
+        }
        public async Task<ModelPhone> GetPhone(int id)
        {
            var phone = await _context.ModelPhones.Include(p => p.ImagePhones).FirstOrDefaultAsync(u => u.Id == id);
