@@ -1,20 +1,20 @@
 [
     {
         "NameFirm": "Samsung",
-        "ImageFirm": "https://i.imgur.com/1oP1u7C.jpg",
+        "ImageFirm": "https://i.imgur.com/cBMz6Vv.png",
         "ModelPhones": [
             {
                 "Model": "s6",
-                "Display": "200",
+                "Display": "23",
                 "Camera": "15",
-                "Processor": "i9",
-                "Storage": "en",
-                "Battery": "pa",
+                "Processor": "i19",
+                "Storage": "12",
+                "Battery": "we",
                 "Others": "Something",
-                "Price": "20000",
+                "Price": "12344",
                 "ImagePhones": [
                     {
-                        "ImageModelAddress": "https://i.imgur.com/lvG926G.png",
+                        "ImageModelAddress": "https://i.imgur.com/tTWWhXl.jpg",
                         "isMain": true
                     }
                 ]

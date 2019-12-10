@@ -1,13 +1,25 @@
 .wrapper {
     height: 420px;
     width: 354px;
-    margin: 50px auto;
+  position: relative;
+  bottom: 300px;
     border-radius: 7px 7px 7px 7px;
     -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   }
-  
+
+  img{
+    position: relative;
+    top: 50px;
+    left: 80px;
+  }
+ 
+  h3{
+    margin-top: 100px;
+    margin-left: 90px;
+  }
+
   .product-price-btn {
     height: 103px;
     width: 327px;

@@ -10,13 +10,14 @@ import {Router} from '@angular/router';
 })
 export class NavComponent implements OnInit {
    model: any = {}; // сохраняем сюда наш placeholder username and password
+   registerMode = false;
   constructor(private accountService: AccountService, private alertify: AlertifyService, private router: Router) { }
 
   ngOnInit() {
   }
   login() {
     this.accountService.login(this.model).subscribe(next => {
-      this.alertify.success('Вход прошел успешно');
+      this.alertify.success('Вхід успішний');
      }, error => { this.alertify.error(error); }
       , () => {
        this.router.navigate(['/phones']);
@@ -26,10 +27,13 @@ export class NavComponent implements OnInit {
     const token = localStorage.getItem('token');
     return !!token; // ==  if(token == true) return true;
   }
+
   logout() {
     localStorage.removeItem('token');
-    this.alertify.message('Logged out');
+    this.alertify.message('Ви вийшли!');
   }
-
+  registerToggle() {
+    this.registerMode = !this.registerMode;
+  }
 
 }

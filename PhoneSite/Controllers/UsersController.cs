@@ -33,21 +33,6 @@ namespace PhoneSite.Controllers
 
             return Ok(userToReturn);
         }
-        // [HttpGet]
-        // public async Task<IActionResult> GetUsers()
-        // {
-        //     var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-
-        //     var userFromRepo = await _repo.GetUser(currentUserId, true);
-
-        //     userParams.UserId = currentUserId;
-
-        //     var users = await _repo.GetUsers();
-
-        //     var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
-
-        //     return Ok(usersToReturn);
-        // }
     }
 
 }

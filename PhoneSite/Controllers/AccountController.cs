@@ -69,15 +69,13 @@ namespace PhoneSite.Controllers
         });
       }
         return Unauthorized();
-      //Створюю токен, який потім відправляєм юзеру, він буде мати 2-бітну інфу про юзера(username i password)
-      //Так як токен валідований сервером без використання бд, сервер може заглянути всередину токена і отримати дані про юзера
 
     }
     private string GenerateJWtToken(User user)
     {
       var claims = new[]
       {
-        new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),// NameIdentifier = id
+        new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
         new Claim(ClaimTypes.Name,user.UserName)
       };
       var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
