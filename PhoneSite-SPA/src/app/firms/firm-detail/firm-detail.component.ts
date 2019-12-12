@@ -5,6 +5,8 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 import { Firm } from 'src/app/_models/firm';
 import { PhoneService } from 'src/app/_services/phone.service';
 import { Phone } from 'src/app/_models/phone';
+import { PageChangedEvent } from 'ngx-bootstrap';
+import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
 
 @Component({
   selector: 'app-firm-detail',
@@ -13,13 +15,13 @@ import { Phone } from 'src/app/_models/phone';
 })
 export class FirmDetailComponent implements OnInit {
   firm: Firm;
-  phones: Phone[];
 
   // tslint:disable-next-line:max-line-length
   constructor(private firmService: FirmServiceService, private phoneService: PhoneService, private route: ActivatedRoute, private alertify: AlertifyService) { }
 
   ngOnInit() {
-    this.loadPhones();
+    this.loadFirm();
+
   }
 
   loadFirm() {
@@ -29,13 +31,5 @@ export class FirmDetailComponent implements OnInit {
         }, error => {
           this.alertify.error(error);
         }); // + конвертит в number из string
-  }
-
-  loadPhones() {
-    this.phoneService.getPhones().subscribe((phones: Phone[]) => {
-      this.phones = phones;
-    }, error => {
-      console.log(error);
-    });
   }
 }

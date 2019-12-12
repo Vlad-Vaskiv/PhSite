@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, PaginationModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -25,6 +25,9 @@ import { PhoneDetailComponent } from './phones/phone-detail/phone-detail.compone
 import { PhoneListComponent } from './phones/phone-list/phone-list.component';
 import { PhoneContComponent } from './phones/phone-cont/phone-cont.component';
 import { PhoneService } from './_services/phone.service';
+import { PhoneDetailResolver } from 'src/_resolvers/phone-detail.resolver';
+import { PhoneListResolver } from 'src/_resolvers/phone-list.resolver';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -45,14 +48,18 @@ import { PhoneService } from './_services/phone.service';
       HttpClientModule,
       FormsModule,
       BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      PaginationModule.forRoot()
    ],
    providers: [
       AccountService,
       ErrorInterceptorProvider,
       AlertifyService,
       FirmServiceService,
-      PhoneService
+      PhoneService,
+      PhoneListResolver,
+      PhoneDetailResolver,
+      JwtHelperService
    ],
    bootstrap: [
       AppComponent

@@ -5,11 +5,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhoneSite.Data;
 using PhoneSite.Dtos;
+using PhoneSite.Helpers;
 using PhoneSite.Models;
 
 namespace PhoneSite.Controllers
 {
-   // [Authorize]
+    [AllowAnonymous]
     [Route("api/[controller]")]
    // [ApiController]
     public class PhonesController : ControllerBase
@@ -24,10 +25,12 @@ namespace PhoneSite.Controllers
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetPhones()
+    public async Task<IActionResult> GetPhones([FromQuery]PhoneParams phoneParams)
     {
-      var phones = await _repo.GetPhones();
+      var phones = await _repo.GetPhones(phoneParams);
       var phonesToReturn = _mapper.Map<IEnumerable<ModelForListDto>>(phones);
+
+      Response.AddPagination(phones.CurrentPage, phones.PageSize, phones.TotalCount, phones.TotalPages);
 
       return Ok(phonesToReturn);
     }

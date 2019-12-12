@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using PhoneSite.Helpers;
 using PhoneSite.Models;
 
 namespace PhoneSite.Data
@@ -9,7 +10,7 @@ namespace PhoneSite.Data
           void Add<T>(T entity) where T : class;
          void Delete<T>(T entity) where T : class;
          Task<bool> SaveAll();
-         Task<IEnumerable<ModelPhone>> GetPhones();
+         Task<PagedList<ModelPhone>> GetPhones(PhoneParams phoneParams);
          Task<ModelPhone> GetPhone(int id);
          Task<ModelPhone> RegisterPhone(ModelPhone modelPhone);
          

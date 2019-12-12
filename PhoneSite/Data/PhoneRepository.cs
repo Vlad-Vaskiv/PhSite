@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using PhoneSite.Helpers;
 using PhoneSite.Models;
 
 namespace PhoneSite.Data
@@ -29,10 +30,10 @@ namespace PhoneSite.Data
            return phone;
        } 
 
-       public async Task<IEnumerable<ModelPhone>> GetPhones()
+       public async Task<PagedList<ModelPhone>> GetPhones(PhoneParams phoneParams)
        {
-           var phones = await _context.ModelPhones.Include(p => p.ImagePhones).ToListAsync();
-           return phones;
+           var phones = _context.ModelPhones.Include(p => p.ImagePhones);
+           return await PagedList<ModelPhone>.CreateAsync(phones, phoneParams.PageNumber, phoneParams.PageSize);
        }
 
        public async Task<ModelPhone> RegisterPhone(ModelPhone modelPhone)

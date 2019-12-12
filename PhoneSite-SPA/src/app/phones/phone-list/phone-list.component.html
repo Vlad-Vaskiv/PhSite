@@ -6,3 +6,22 @@
     </div>
   </div>
 </div> -->
+<div class="container">
+  <div class="row">
+    <div *ngFor="let phone of phones" class="col-12 col-sm-8 col-md-6 col-lg-4">
+      <app-phone-cont [phone]="phone"></app-phone-cont>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <pagination
+      [boundaryLinks]="true"
+      [totalItems]="pagination.totalItems"
+      [(ngModel)]="pagination.currentPage"
+      [itemsPerPage]="pagination.itemsPerPage"
+      (pageChanged)="pageChanged($event)"
+    previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+
+  </pagination>
+</div>
